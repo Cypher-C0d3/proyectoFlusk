@@ -1,0 +1,30 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Mi Sitio{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <!-- barra de navegacion -->
+    {% include 'components/navbar.html' %}
+
+    <div class="container">
+      <!-- contenido de la pagina -->
+      {% block content %}{% endblock %}
+    </div>
+
+    <!-- pie de pagina -->
+    {% include 'components/footer.html' %}
+
+    <!-- popper debe ir antes de bootstrap.min.js o no funcionara -->
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

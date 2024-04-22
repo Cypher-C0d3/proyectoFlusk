@@ -1,0 +1,20 @@
+<!-- descarga.html -->
+{% extends 'base.html' %}
+
+<!-- título de la pestaña -->
+{% block title %}Descarga{% endblock %}
+
+<!-- contenido de la página -->
+{% block content %}
+<h1>Descarga</h1>
+<div>
+  <p>Descarga tu música favorita en formato MP3.</p>
+  <form action="/descargar" method="post">
+    <label for="cancion">Canción:</label>
+    <input type="text" id="cancion" name="cancion" required /><br /><br />
+    <label for="artista">Artista:</label>
+    <input type="text" id="artista" name="artista" required /><br /><br />
+    <input type="submit" value="Descargar" />
+  </form>
+</div>
+{% endblock %}
